@@ -1,0 +1,99 @@
+.slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin: 0;
+  transition: transform 0.6s ease;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+.image.translate-animation {
+  animation-name: fade;
+  animation-duration: 0.6s;
+  animation-timing-function: ease-in-out;
+  background-color: linear-gradient(
+      rgba(216, 19, 19, 0) 10vw,
+      rgb(18, 18, 18) 46.875vw
+    ),
+    linear-gradient(to left, rgba(18, 18, 18, 0.7), rgba(18, 18, 18, 0) 50%);
+}
+
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.slider .image:hover {
+  transform: scale(1.05);
+  width: 100%;
+}
+
+.prev-button,
+.next-button {
+  position: absolute;
+  background-repeat: repeat-x;
+  top: 0;
+  bottom: 0;
+  width: 15%;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0);
+  opacity: 0.5;
+  z-index: 1;
+  border: 0px;
+}
+
+.prev-button {
+  left: 0px;
+}
+.prev-button:hover {
+  background-image: -webkit-linear-gradient(
+    right,
+    color-stop(rgba(0, 0, 0, 0.5) 0),
+    color-stop(rgba(0, 0, 0, 0.0001) 100%)
+  );
+  background-image: -o-linear-gradient(
+    right,
+    rgba(0, 0, 0, 0.9) 0,
+    rgba(0, 0, 0, 0.0001) 100%
+  );
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.5) 0,
+    rgba(0, 0, 0, 0.0001) 100%
+  );
+  color: #fff;
+}
+
+.next-button {
+  right: 0px;
+}
+.next-button:hover {
+  background-image: -webkit-linear-gradient(
+    left,
+    color-stop(rgba(0, 0, 0, 0.5) 0),
+    color-stop(rgba(0, 0, 0, 0.0001) 100%)
+  );
+  background-image: -o-linear-gradient(
+    left,
+    rgba(0, 0, 0, 0.9) 0,
+    rgba(0, 0, 0, 0.0001) 100%
+  );
+  background-image: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0.5) 0,
+    rgba(0, 0, 0, 0.0001) 100%
+  );
+  color: #fff;
+}

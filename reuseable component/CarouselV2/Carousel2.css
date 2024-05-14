@@ -1,0 +1,156 @@
+/* Taken from getting started guide at: https://leafletjs.com/examples/quick-start/ */
+@import "https://unpkg.com/leaflet@1.7.1/dist/leaflet.css";
+@import "https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap";
+
+/* These CSS variables are global, so they are available in all CSS modules */
+:root {
+  --color-brand--1: #ffb545;
+  --color-brand--2: #00c46a;
+
+  --color-dark--0: #242a2e;
+  --color-dark--1: #2d3439;
+  --color-dark--2: #42484d;
+  --color-light--1: #aaa;
+  --color-light--2: #ececec;
+  --color-light--3: #d6dee0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  color: var(--color-light--2);
+  font-weight: 400;
+  line-height: 1.6;
+}
+.section {
+  background-color: white;
+  height: 400px;
+  width: 100%;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  margin: auto;
+  border-radius: 8px;
+}
+.carousel {
+  display: flex;
+}
+.window {
+  height: 400px;
+  width: 100%;
+}
+.window img {
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.next-button,
+.prev-button {
+  position: absolute;
+  height: 100%;
+  width: 90px;
+  margin: 0;
+  z-index: 1;
+
+  color: #979696;
+  border: none;
+  cursor: pointer;
+}
+.next-button {
+  background: linear-gradient(
+    to left,
+    rgba(79, 76, 76, 0.51),
+    rgba(18, 18, 18, 0)
+  );
+  right: 0;
+}
+.next-button:hover {
+  background: linear-gradient(
+    to left,
+    rgba(18, 18, 18, 1),
+    rgba(18, 18, 18, 0)
+  );
+  color: white;
+}
+.prev-button {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    rgba(79, 76, 76, 0.51),
+    rgba(18, 18, 18, 0)
+  );
+}
+.prev-button:hover {
+  background: linear-gradient(
+    to right,
+    rgba(18, 18, 18, 1),
+    rgba(18, 18, 18, 0)
+  );
+  color: white;
+}
+@media screen and (max-width: 1250px) {
+  .container {
+    width: 800px;
+    height: 500px;
+  }
+  .window img {
+    width: 800px;
+    height: 500px;
+  }
+  .window {
+    width: 800px;
+    height: 500px;
+  }
+}
+@media screen and (max-width: 850px) {
+  .container {
+    width: 600px;
+    height: 350px;
+  }
+  .window img {
+    width: 600px;
+    height: 350px;
+  }
+  .window {
+    width: 600px;
+    height: 350px;
+  }
+}
+@media screen and (max-width: 850px) {
+  .container {
+    width: 400px;
+    height: 250px;
+  }
+  .window img {
+    width: 400px;
+    height: 250px;
+  }
+  .window {
+    width: 400px;
+    height: 250px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .container {
+    width: 300px;
+    height: 190px;
+  }
+  .window img {
+    width: 300px;
+    height: 190px;
+  }
+  .window {
+    width: 300px;
+    height: 190px;
+  }
+}
